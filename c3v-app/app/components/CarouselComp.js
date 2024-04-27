@@ -6,7 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function CarouselComp() {
   return ( 
     <>
-      <div className='max-w-[1200px] mx-auto'>
+      <div className='max-w-[1200px] mx-auto mt-6'>
         <Carousel showArrows={true} autoPlay={true} interval={3000} infiniteLoop={true} showThumbs={false}>
             <div>
                 <img src="/images/banner/1.png" />

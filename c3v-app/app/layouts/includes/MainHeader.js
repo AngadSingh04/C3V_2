@@ -6,35 +6,35 @@ import { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BiLoaderCircle } from 'react-icons/bi'
 
-export default function MainHeader() {   
+export default function MainHeader() {
 
-    const [items, setItems] = useState([])
-    const [isSearching, setIsSearching] = useState(null)
+    // const [items, setItems] = useState([])
+    // const [isSearching, setIsSearching] = useState(null)
 
-    const handleSearchName = debounce(async (event) => {
-        if (event.target.value == "") {
-            setItems([])
-            return
-        }
+    // const handleSearchName = debounce(async (event) => {
+    //     if (event.target.value == "") {
+    //         setItems([])
+    //         return
+    //     }
 
-        setIsSearching(true)
+    //     setIsSearching(true)
 
-        try {
-            const response = await fetch(`/api/products/search-by-name/${event.target.value}`)
-            const result = await response.json()
+    //     try {
+    //         const response = await fetch(`/api/products/search-by-name/${event.target.value}`)
+    //         const result = await response.json()
 
-            if (result) {
-                setItems(result)
-                setIsSearching(false)
-                return
-            }
-            setItems([])
-            setIsSearching(false)
-        } catch (error) {
-            console.log(error)
-            alert(error)
-        }
-    }, 500)
+    //         if (result) {
+    //             setItems(result)
+    //             setIsSearching(false)
+    //             return
+    //         }
+    //         setItems([])
+    //         setIsSearching(false)
+    //     } catch (error) {
+    //         console.log(error)
+    //         alert(error)
+    //     }
+    // }, 500)
     
     return (
         <>
@@ -43,7 +43,7 @@ export default function MainHeader() {
                     <div className="flex items-center w-full bg-white">
                         <div className="flex lg:justify-start justify-between gap-10 max-w-[1150px] w-full px-3 py-5 mx-auto">
                             <Link href="/">
-                                <img width="120" src="/images/logo.svg" />
+                                <img width="100" src="/images/logo.png" />
                             </Link>
 
                             <div className="w-full">
@@ -64,12 +64,12 @@ export default function MainHeader() {
                                                     pl-3
                                                     focus:outline-none
                                                 "
-                                                onChange={handleSearchName}
+                                                // onChange={handleSearchName}
                                                 placeholder="Search for anything"
                                                 type="text"
                                             />
 
-                                            {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
+                                            {/* {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
                                         
                                             {items.length > 0 ?
                                                 <div className="absolute bg-white max-w-[910px] h-auto w-full z-20 left-0 top-12 border p-1">
@@ -88,11 +88,11 @@ export default function MainHeader() {
                                                         </div>
                                                     ))}
                                                 </div>
-                                            : null}
+                                            : null} */}
 
                                         </div>
 
-                                        <button className="flex items-center bg-blue-600 text-sm font-semibold text-white p-[11px] ml-2 px-14">
+                                        <button className="flex items-center  bg-[#ffd700] text-sm font-semibold text-white p-[11px] ml-2 px-14">
                                             Search
                                         </button>
 
