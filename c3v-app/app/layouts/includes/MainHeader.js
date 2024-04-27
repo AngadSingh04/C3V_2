@@ -96,7 +96,7 @@ export default function MainHeader() {
                                             Search
                                         </button>
 
-                                        <div className="text-xs px-2 hover:text-blue-500 cursor-pointer">Advanced</div>
+                                        <div className="text-xs px-2 hover:text-red cursor-pointer">Advanced</div>
                                     </div>
                                 </div>
                             </div>
