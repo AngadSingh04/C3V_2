@@ -3,15 +3,15 @@ import { useCart } from "../context/cart"
 import { toast } from "react-toastify"
 
 export default function CartItem({ product }) {
-//   const cart = useCart()
+  const cart = useCart()
 
-//   const removeItemFromCart = () => {
-//     let res = confirm(`Are you sure you want to remove this? "${product.title}"`)
-//     if (res) {
-//         cart.removeFromCart(product)
-//         toast.info('Removed from cart', { autoClose: 3000 })
-//     }
-//   }
+  const removeItemFromCart = () => {
+    let res = confirm(`Are you sure you want to remove this? "${product.title}"`)
+    if (res) {
+        cart.removeFromCart(product)
+        toast.info('Removed from cart', { autoClose: 3000 })
+    }
+  }
 
   return (
     <>
