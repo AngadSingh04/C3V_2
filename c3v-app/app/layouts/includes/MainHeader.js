@@ -1,6 +1,6 @@
 'use client'
 
-import { debounce } from "debounce";
+import debounce from "debounce";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -8,33 +8,33 @@ import { BiLoaderCircle } from 'react-icons/bi'
 
 export default function MainHeader() {
 
-    // const [items, setItems] = useState([])
-    // const [isSearching, setIsSearching] = useState(null)
+    const [items, setItems] = useState([])
+    const [isSearching, setIsSearching] = useState(null)
 
-    // const handleSearchName = debounce(async (event) => {
-    //     if (event.target.value == "") {
-    //         setItems([])
-    //         return
-    //     }
+    const handleSearchName = debounce(async (event) => {
+        if (event.target.value == "") {
+            setItems([])
+            return
+        }
 
-    //     setIsSearching(true)
+        setIsSearching(true)
 
-    //     try {
-    //         const response = await fetch(`/api/products/search-by-name/${event.target.value}`)
-    //         const result = await response.json()
+        try {
+            const response = await fetch(`/api/products/search-by-name/${event.target.value}`)
+            const result = await response.json()
 
-    //         if (result) {
-    //             setItems(result)
-    //             setIsSearching(false)
-    //             return
-    //         }
-    //         setItems([])
-    //         setIsSearching(false)
-    //     } catch (error) {
-    //         console.log(error)
-    //         alert(error)
-    //     }
-    // }, 500)
+            if (result) {
+                setItems(result)
+                setIsSearching(false)
+                return
+            }
+            setItems([])
+            setIsSearching(false)
+        } catch (error) {
+            console.log(error)
+            alert(error)
+        }
+    }, 500)
     
     return (
         <>
@@ -64,12 +64,12 @@ export default function MainHeader() {
                                                     pl-3
                                                     focus:outline-none
                                                 "
-                                                // onChange={handleSearchName}
+                                                onChange={handleSearchName}
                                                 placeholder="Search for anything"
                                                 type="text"
                                             />
 
-                                            {/* {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
+                                            {isSearching ? <BiLoaderCircle className="mr-2 animate-spin" size={22} /> : null}
                                         
                                             {items.length > 0 ?
                                                 <div className="absolute bg-white max-w-[910px] h-auto w-full z-20 left-0 top-12 border p-1">
@@ -88,7 +88,7 @@ export default function MainHeader() {
                                                         </div>
                                                     ))}
                                                 </div>
-                                            : null} */}
+                                            : null}
 
                                         </div>
 

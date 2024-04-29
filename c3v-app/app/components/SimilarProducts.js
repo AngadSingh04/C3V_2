@@ -6,23 +6,27 @@ import { BiLoader } from 'react-icons/bi'
 
 export default function SimilarProducts () {
 
-    const products = [
-        {
-          id: 1,
-          title: "brown leather bag",
-          description: "brown bag he",
-          url: "https://picsum.photos/id/7",
-          price: 5000
-        },
-        {
-          id: 2,
-          title: "School books",
-          description: "school books he",
-          url: "https://picsum.photos/id/20",
-          price: 2000
-        }
-    
-      ]
+  const [products, setProducts] = useState([])
+
+  const getRandomProducts = async () => {
+    try {
+      const response = await fetch('/api/products/get-random')
+      const result = await response.json()
+
+      if (result) {
+        setProducts(result)
+        return
+      }
+
+      setProducts([])
+    } catch (error) {
+      console.log(error)
+      alert(error)
+    }
+  }
+
+  useEffect(() => { getRandomProducts() }, [])
+
   return ( 
     <>
         <div>
