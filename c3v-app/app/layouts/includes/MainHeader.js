@@ -83,7 +83,7 @@ export default function MainHeader() {
                                                                     <img className="rounded-md" width="40" src={item?.url+'/40'} />
                                                                     <div className="truncate ml-2">{ item?.title }</div>
                                                                 </div>
-                                                                <div className="truncate">£{ (item?.price / 100).toFixed(2) }</div>
+                                                                <div className="truncate">Rs{ (item?.price / 100).toFixed(2) }</div>
                                                             </Link>
                                                         </div>
                                                     ))}

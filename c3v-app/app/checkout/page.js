@@ -188,7 +188,7 @@ export default function Checkout() {
                             <div className="p-4">
                                 <div className="flex items-baseline justify-between text-sm mb-1">
                                     <div>Items ({cart.getCart().length})</div>
-                                    <div>£{(cart.cartTotal() / 100).toFixed(2)}</div>
+                                    <div>Rs{(cart.cartTotal() / 100).toFixed(2)}</div>
                                 </div>
                                 <div className="flex items-center justify-between mb-4 text-sm">
                                     <div>Shipping:</div>
@@ -200,7 +200,7 @@ export default function Checkout() {
                                 <div className="flex items-center justify-between my-4">
                                     <div className="font-semibold">Order total</div>
                                     <div className="text-2xl font-semibold">
-                                        £{(cart.cartTotal() / 100).toFixed(2)}
+                                        Rs{(cart.cartTotal() / 100).toFixed(2)}
                                     </div>
                                 </div>
 
@@ -227,7 +227,7 @@ export default function Checkout() {
                         </ClientOnly>
 
                         <div className="flex items-center p-4 justify-center gap-2 border-t">
-                            <img width={50} src="/images/logo.svg" />
+                            <img width={50} src="/images/logo.png" />
                             <div className=" font-light mb-2 mt-2">MONEY BACK GUARANTEE</div>
                         </div>
                     </div>
